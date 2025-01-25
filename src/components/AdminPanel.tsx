@@ -1,10 +1,10 @@
 // src/components/AdminPanel.tsx
 import React, { useEffect, useState } from "react";
 import { db, auth } from "../firebase"; 
-import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { onAuthStateChanged, signOut } from "firebase/auth"; 
 import { useNavigate } from "react-router-dom";
-import axios, { AxiosError } from 'axios';
+import axios from 'axios';
 
 
 
@@ -17,7 +17,7 @@ interface Post {
 }
 
 const AdminPanel: React.FC = () => {
-  const [users, setUsers] = useState<any[]>([]); 
+  const [, setUsers] = useState<any[]>([]); 
   const usersCollection = collection(db, "users"); 
   const navigate = useNavigate();
 
